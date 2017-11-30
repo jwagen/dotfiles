@@ -14,6 +14,10 @@ Plugin 'tomasiser/vim-code-dark'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Set color
+set t_Co=256
+colorscheme codedark
+
 """Set relative line number
 
 set relativenumber
