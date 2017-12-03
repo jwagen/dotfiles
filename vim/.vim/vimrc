@@ -19,5 +19,6 @@ set t_Co=256
 colorscheme codedark
 
 """Set relative line number
-
 set relativenumber
+" Show absolute line number on current line
+set number
