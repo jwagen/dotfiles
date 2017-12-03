@@ -22,3 +22,6 @@ colorscheme codedark
 set relativenumber
 " Show absolute line number on current line
 set number
+
+" Enable mouse
+set mouse=a
