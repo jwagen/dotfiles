@@ -4,15 +4,22 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
+"
+"Plugins
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'tpope/vim-fugitive'
+Plugin 'w0rp/ale'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'inside/vim-grep-operator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 " Set color
 set t_Co=256
@@ -25,3 +32,59 @@ set number
 
 " Enable mouse
 set mouse=a
+
+"Tab settings
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+" Set space as leader
+let mapleader = " "
+set showcmd
+
+set laststatus=2
+set statusline= 
+set statusline+=%#PmenuSel#
+set statusline+=%{fugitive#statusline()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+
+"""""""""""""""""""""""""""""""
+"" Key bindings
+"""""""""""""""""""""""""""""""
+" Save
+noremap <c-s> :w<CR>
+
+" Window movement
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+
+" Quickfix window
+noremap <leader>qn :cnext<CR>
+noremap <leader>qN :cprevious<CR>
+noremap <leader>qq :cclose<CR>
+
+"""""""""""""""""""""""""""""""""""""""""
+"" Plugin settings
+"""""""""""""""""""""""""""""""""""""""""
+
+" Vim grep operator 
+set grepprg=grep\ -rnI\ $*
+nmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
+nmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
+vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
+
+" YCM config
+noremap <leader>gg :YcmCompleter GoTo<CR>
