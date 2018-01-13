@@ -10,6 +10,7 @@ call vundle#begin()
 "
 "Plugins
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'junegunn/seoul256.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-fugitive'
@@ -23,7 +24,8 @@ syntax on
 
 " Set color
 set t_Co=256
-colorscheme codedark
+""colorscheme codedark
+colorscheme seoul256
 
 """Set relative line number
 set relativenumber
