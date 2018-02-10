@@ -27,6 +27,13 @@ set t_Co=256
 ""colorscheme codedark
 colorscheme seoul256
 
+" Turn on persistant undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
+
 """Set relative line number
 set relativenumber
 " Show absolute line number on current line
