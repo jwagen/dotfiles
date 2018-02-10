@@ -1,0 +1,6 @@
+# Makes sure this directory remains empty in the git reposetory
+# Ignore everything
+*
+# Except this file
+!.gitignore
+
