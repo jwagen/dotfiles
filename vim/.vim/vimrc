@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "
 "Plugins
 Plugin 'tomasiser/vim-code-dark'
@@ -14,7 +14,7 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-fugitive'
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'inside/vim-grep-operator'
 " All of your Plugins must be added before the following line
@@ -69,6 +69,8 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 
+set completeopt-=preview
+
 """""""""""""""""""""""""""""""
 "" Key bindings
 """""""""""""""""""""""""""""""
@@ -99,3 +101,4 @@ vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
 
 " YCM config
 noremap <leader>gg :YcmCompleter GoTo<CR>
+noremap <leader>gf :YcmCompleter FixIt<CR>

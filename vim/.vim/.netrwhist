@@ -1,4 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/johannes/dotfiles/vim/.vim'
 let g:netrw_dirhist_2='/home/johannes/build/kicad'
+let g:netrw_dirhist_3='/home/johannes/fag/TFE4171/venus/home/courses/desdigsys2/2018s/dds218s13/exercises/lab7'
+let g:netrw_dirhist_4='/home/johannes/fag/TFE4171/venus/home/courses/desdigsys2/2018s/dds218s13/exercises/lab7/v1'
+let g:netrw_dirhist_5='/home/johannes/fag/TFE4171/venus/home/courses/desdigsys2/2018s/dds218s13/exercises/lab7'
+let g:netrw_dirhist_6='/home/johannes/dotfiles/vim/.vim/ftplugin'
+let g:netrw_dirhist_7='/home/johannes/Dropbox/ntnu/V18/TFE4205 - Robot/beaglebone'

@@ -1,3 +1,3 @@
-set shiftwidth=3 
-set softtabstop=3
+set shiftwidth=2
+set softtabstop=2
 set expandtab
