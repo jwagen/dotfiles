@@ -14,6 +14,15 @@
 (require 'evil)
 (evil-mode 1)
 
+;Mouse for org mode
+(require 'org-mouse)
+; Enable indenting in org mode
+(setq org-indent-mode t)
+
+; Custom bulletpoins for orgmode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'seoul256 t)
