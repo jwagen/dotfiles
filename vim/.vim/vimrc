@@ -1,3 +1,8 @@
+
+""""""""""""""""""""""""""""""""""""""'
+"""""""""" PLUGINS           
+""""""""""""""""""""""""""""""""""""""'
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -19,16 +24,24 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'inside/vim-grep-operator'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
+
+""""""""""""""""""""""""""""""""""""""'
+"""""""""" COLOR SCHEME
+""""""""""""""""""""""""""""""""""""""'
 
 
 " Set color
 "set t_Co=256
 ""colorscheme codedark
 
+" Enable 24 bit colors from gui
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -36,6 +49,10 @@ if exists('+termguicolors')
 endif
 
 colorscheme monokai
+
+if &term =~ '256color'
+    set t_ut=
+endif
 
 
 
@@ -66,20 +83,20 @@ set softtabstop=4
 let mapleader = " "
 set showcmd
 
-set laststatus=2
-set statusline= 
-set statusline+=%#PmenuSel#
-set statusline+=%{fugitive#statusline()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+"set laststatus=2
+"set statusline= 
+"set statusline+=%#PmenuSel#
+"set statusline+=%{fugitive#statusline()}
+"set statusline+=%#LineNr#
+"set statusline+=\ %f
+"set statusline+=%m\
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
+"set statusline+=\ %y
+"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\[%{&fileformat}\]
+"set statusline+=\ %p%%
+"set statusline+=\ %l:%c
 
 set completeopt-=preview
 
@@ -90,19 +107,23 @@ set completeopt-=preview
 noremap <c-s> :w<CR>
 
 " Window movement
-noremap <c-h> <c-w>h
-noremap <c-l> <c-w>l
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
+"noremap <c-h> <c-w>h
+"noremap <c-l> <c-w>l
+"noremap <c-j> <c-w>j
+"noremap <c-k> <c-w>k
 
 " Quickfix window
 noremap <leader>qn :cnext<CR>
 noremap <leader>qN :cprevious<CR>
 noremap <leader>qq :cclose<CR>
+noremap <leader>so :w<CR>:so $HOME/.vim/vimrc<CR>
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
 "" Plugin settings
 """""""""""""""""""""""""""""""""""""""""
+" Airline status line
+let g:airline#extensions#tabline#enabled = 1
+
 
 " Vim grep operator 
 set grepprg=grep\ -rnI\ $*
@@ -114,3 +135,6 @@ vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
 " YCM config
 noremap <leader>gg :YcmCompleter GoTo<CR>
 noremap <leader>gf :YcmCompleter FixIt<CR>
+
+" vim-tmux-navigator
+let g:tmux_navigator_save_on_switch = 1 "Save when swiching buffers and file when it is not updated
