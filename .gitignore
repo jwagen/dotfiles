@@ -1,1 +1,3 @@
 .*.swp
+# Ignore vim plugins, install them instead
+vim/.vim/bundle/ 
